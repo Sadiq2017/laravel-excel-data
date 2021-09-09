@@ -15,14 +15,14 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('scu')->unique();
-            $table->string('url')->unique();
+            $table->string('scu');
+            $table->string('url');
             $table->text('description')->nullable();
             $table->text('description_full')->nullable();
             $table->decimal('price',8,2);
+            $table->decimal('converted_price',8,2)->nullable();
             $table->string('currency')->default('RUB');
             $table->tinyInteger('available')->default(1);
-            $table->json('images')->nullable();
             $table->timestamps();
         });
     }
