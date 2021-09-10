@@ -29,8 +29,7 @@ class Import
             ]);
             $images=$row['images'] ? explode(',',$row['images']) : null;
             if ($images){
-                $items[]=[
-                    'product_id'=>$id,
+                $items[$id][]=[
                     'path'=>$images,
                 ];
             }

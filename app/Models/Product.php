@@ -15,6 +15,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $table='products';
+
     protected $guarded = [];
 
     protected $casts = [
@@ -23,7 +25,7 @@ class Product extends Model
 
     public function images()
     {
-        return $this->belongsToMany(ImageProduct::class);
+        return $this->belongsToMany(Image::class);
     }
 
 }
