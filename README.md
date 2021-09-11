@@ -43,8 +43,11 @@ $ make migrate
 ```
 Add storage link in public 
 ```console
-$ make storage
+$ make storage-link
 ```
+
+Open web page http://127.0.0.1:8889
+Open phpmyadmin page http://127.0.0.1:8021
 
 CHANGE QUEUE_CONNECTION from sync to database
 ```console

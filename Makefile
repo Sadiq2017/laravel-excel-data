@@ -34,7 +34,7 @@ migrate-fresh:
 generate:
 	docker-compose run --rm php-cli php artisan key:generate
 
-storage:
+storage-link:
 	docker-compose run --rm php-cli php artisan storage:link
 
 queue-work:
