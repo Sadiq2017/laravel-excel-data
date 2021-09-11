@@ -24,7 +24,16 @@ class ExcelUploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'required|mimes:xls,xlsx'
+            'file' => 'required|mimes:xls,xlsx|max:20000'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'file.required' => 'Поле файла обязательно для заполнения.',
+            'file.mimes' => 'Файл должен быть файлом типа: xls, xlsx.',
+            'file.max' => 'Размер файла не должен превышать 20 мегабайт.'
         ];
     }
 }

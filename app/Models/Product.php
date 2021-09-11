@@ -15,17 +15,14 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table='products';
+    protected $table = 'products';
 
     protected $guarded = [];
 
-    protected $casts = [
-        'images' => 'json'
-    ];
 
     public function images()
     {
-        return $this->belongsToMany(Image::class);
+        return $this->hasMany(Image::class);
     }
 
 }

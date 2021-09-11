@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ProductController::class, 'index']);
+Route::post('/', [ProductController::class, 'upload'])->name('upload-excel');
+Route::post('/import', [ProductController::class, 'import'])->name('import-data');
+Route::get('/import', [ProductController::class, 'list'])->name('list');
